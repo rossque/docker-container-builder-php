@@ -1,0 +1,16 @@
+version: '3'
+
+networks:
+  local:
+
+services:
+  php:
+    build:
+      context: .
+      args:
+        PHP_IMAGE: ${PHP_IMAGE}
+      dockerfile: ${DOCKERFILE}
+    image: ${PHP_NAME}
+    container_name: ${PHP_NAME}
+    networks:
+      - local
